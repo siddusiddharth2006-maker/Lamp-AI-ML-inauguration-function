@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI & ML Department Inauguration - 3D Lamp Experience</title>
+  <meta name="description" content="An interactive 3D WebGL ceremonial lighting experience merging traditional Indian heritage with artificial intelligence.">
+  
+  <!-- Google Fonts for luxury typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Import Map for Three.js and Addons -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+        "gsap": "https://unpkg.com/gsap@3.12.0/index.js"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- WebGL Render Canvas Container -->
+  <div id="canvas-container"></div>
+
+  <!-- Custom Cursor Flame Overlay -->
+  <div id="flame-cursor"></div>
+
+  <!-- Premium Preloader -->
+  <div id="preloader" class="ui-panel">
+    <div class="preloader-content">
+      <div class="lotus-spinner">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="core-sparkle"></div>
+      </div>
+      <h1 class="brand-title">IGNITING INNOVATION</h1>
+      <p class="brand-subtitle">AI & ML Department Inauguration</p>
+      <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+      <p id="progress-text" class="status-text">Creating digital brass elements...</p>
+    </div>
+  </div>
+
+  <!-- Audio / Enter Consent Overlay -->
+  <div id="consent-overlay" class="ui-panel hidden">
+    <div class="consent-content">
+      <div class="traditional-border"></div>
+      <h2 class="consent-title">Ceremonial Experience</h2>
+      <p class="consent-description">
+        Welcome to the digital inauguration. This experience contains interactive 3D visuals, ambient soundscapes, and procedural audio feedback.
+      </p>
+      <p class="consent-subtext">For the best experience, please use headphones and keep audio enabled.</p>
+      <div class="btn-group">
+        <button id="btn-enter" class="btn btn-primary">ENTER WITH AUDIO</button>
+        <button id="btn-enter-silent" class="btn btn-secondary">ENTER SILENT</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main HUD UI -->
+  <div id="hud-overlay" class="hidden">
+    <!-- Top Bar Controls -->
+    <header class="hud-header">
+      <div class="hud-title-block">
+        <span class="badge">13.08.2026</span>
+        <span class="divider">|</span>
+        <span class="dept">AI & ML Department</span>
+      </div>
+      <div class="hud-controls">
+        <button id="btn-audio-toggle" class="btn-icon" aria-label="Toggle Audio" title="Toggle Sound">
+          <svg id="svg-volume-on" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.85 14,18.71V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.77 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+          </svg>
+          <svg id="svg-volume-off" class="hidden" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12,4L7,9H3V15H7L12,20V4M16.5,12A4.5,4.5 0 0,0 14,7.97V10.18L16.45,12.63C16.48,12.42 16.5,12.21 16.5,12M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12A9,9 0 0,0 14,3.23V5.29C16.89,6.15 19,8.83 19,12M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.5C15.58,18 14.82,18.4 14,18.54V20.6C15.38,20.42 16.63,19.8 17.68,19L20.22,21.54L21.5,20.27L12,10.77L4.27,3M12,4V7.27L14.73,10L12,4Z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Interactive Hint Overlay (Pre-ignition) -->
+    <div id="interactive-hint" class="interactive-hint">
+      <div class="hint-pulse"></div>
+      <p>Guide the sacred flame to ignite the Kuthuvilakku</p>
+    </div>
+
+    <!-- Celebratory Text Reveal (Post-ignition) -->
+    <div id="celebratory-reveal" class="celebratory-reveal hidden">
+      <h1 id="celebration-title" class="reveal-text gold-text">AI & ML Department Inauguration</h1>
+      <h2 id="celebration-date" class="reveal-text gold-text-light">13 August 2026</h2>
+      <p id="celebration-tagline" class="reveal-tagline">Welcome to the Future of Intelligence</p>
+    </div>
+
+    <div id="nav-panel" class="nav-panel hidden">
+      <button class="glass-button">About the Department</button>
+      <button class="glass-button">Innovation Showcase</button>
+      <button class="glass-button">Ceremony Highlights</button>
+    </div>
+  </div>
+
+  <!-- Javascript Modules -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
